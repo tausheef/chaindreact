@@ -5,10 +5,28 @@ import './App.css'
 
 function App() {
  
-  let counter = 15;
+  //let counter = 15;
 
-  const addvalue = () => {
-    console.log("working!!", Math.random() );
+  let [counter , setcounter] = useState(15)
+
+  // const addvalue = () => {
+  //   counter = counter + 1;
+  //   setcounter(counter);
+  
+  // }
+
+    const addvalue = () => {if(counter < 20){
+      counter = counter + 1;
+      setcounter(counter);
+     
+    }}
+  
+  
+  const subvalue = () => {if(counter > 0){
+    counter = counter - 1;
+    setcounter(counter);
+  }
+
   }
 
   return (
@@ -18,7 +36,7 @@ function App() {
     <button onClick={addvalue}>Increase</button>
     <br/>
     <br />
-    <button>Decrease</button>
+    <button onClick={subvalue}>Decrease</button>
     </>
   )
 }
